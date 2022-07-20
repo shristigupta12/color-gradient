@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gradient Generator</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="content">
+        <div class="heading-wrapper">
+            <div class="heading">Color Gradient Generator</div>
+            <div class="sub-heading">Add 2 colors to generate a gradient</div>
+        </div>
+        <div class="content-wrapper">
+            <div class="color-picker-wrapper">
+                <div class="colors" id="color1">
+                    <div class="color-heading">Color 1</div>
+                    <input class="color-btn" type="color" id="color-btn1"></input>
+                    <input type="text" placeholder="Type hex, rgb, rgba or hsl code" class="color-input" >
+                </div>
+                <div class="colors" id="color2">
+                    <div class="color-heading">Color 2</div>
+                    <input class="color-btn" type="color" id="color-btn2"></input>
+                    <input type="text" placeholder="Type hex, rgb, rgba or hsl code" class="color-input" >
+                </div>
+                <div class="add-more-color-wrapper">
+                    <button class="plus-btn">&#43;</button>
+                    <div class="add-text">Add color</div>
+                </div>
+            </div>
+            <div class="gradient-wrapper"></div>
+        </div>       
+    </div>
+    
+    <script src="./script.js"></script>
+</body>
+</html>
