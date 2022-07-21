@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gradient Generator</title>
     <link rel="stylesheet" href="./style.css">
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/DesignSystemsOSS/eccentrictouch@master/source/eccentrictouch.css" /> -->
 </head>
 <body>
     <div class="content">
@@ -17,17 +18,20 @@
                 <div class="colors" id="color1">
                     <div class="color-heading">Color 1</div>
                     <input class="color-btn" type="color" id="color-btn1"></input>
-                    <input type="text" placeholder="Type hex, rgb, rgba or hsl code" class="color-input" >
+                    <input type="text" placeholder="Type hex, rgb, rgba or hsl code" class="color-input" id="input1" >
                 </div>
                 <div class="colors" id="color2">
                     <div class="color-heading">Color 2</div>
                     <input class="color-btn" type="color" id="color-btn2"></input>
-                    <input type="text" placeholder="Type hex, rgb, rgba or hsl code" class="color-input" >
+                    <input type="text" placeholder="Type hex, rgb, rgba or hsl code" class="color-input" id="input2" >
                 </div>
                 <div class="add-more-color-wrapper">
                     <button class="plus-btn">&#43;</button>
                     <div class="add-text">Add color</div>
                 </div>
+            </div>
+            <div class="apply-btn-wrapper">
+                <button class="apply-btn">APPLY</button>
             </div>
             <div class="gradient-wrapper"></div>
         </div>       

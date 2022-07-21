@@ -2,6 +2,9 @@
 html, body{
     font-family: 'Inter', sans-serif;
 }
+input::placeholder{
+    color: rgb(145, 143, 143);
+}
 .content{
     margin: 3rem;
     padding: 3rem 3rem;
@@ -15,29 +18,41 @@ html, body{
 }
 .content-wrapper{
     display: flex;
-    gap: 20vw;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
 }
 .color-picker-wrapper{
     margin-top: 3rem;
     display: flex;
     flex-direction: column;
     gap: 20px;
+    width: fit-content;
 }
 .colors{
     display: flex;
     gap: 10px;
-    width: 400px;
+    width: fit-content;
+    align-items: center;
+    justify-content: flex-start;
 }
 .gradient-wrapper{
     width: 30vw;
     height: 50vh;
     background: pink;
     border-radius: 10px;
+    border: 2px solid rgb(107,121,133);
 }
 .color-input{
+    width: fit-content;
+    padding: 8px;
     width: 200px;
-    padding: 2px;
-    color: rgb(107,121,133);
+    border: 1px solid rgb(177, 174, 174);
+    color: rgb(53, 52, 52);
+}
+.color-input:focus{
+    outline: none;
+    border-color: #8d8d92;
 }
 .plus-btn{
     width: 30px;
@@ -57,4 +72,19 @@ html, body{
     padding: 5px;
     width: 160px;
     border-radius: 10px;
+}
+.apply-btn-wrapper{
+    width: 10vw;
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.apply-btn{
+    background-color: #544bd2;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-family: 'Inter', sans-serif;
+    border: none;
 }
