@@ -39,7 +39,6 @@ input::placeholder{
 .gradient-wrapper{
     width: 30vw;
     height: 50vh;
-    background: pink;
     border-radius: 10px;
     border: 2px solid rgb(107,121,133);
 }
