@@ -88,6 +88,7 @@ resetBtn.addEventListener("click", ()=>{
         colorCount--;
     }
     colorCount = 2;
+    grandient.style.background = "white";
 })
 
 
