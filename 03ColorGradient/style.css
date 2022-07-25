@@ -81,10 +81,12 @@ input::placeholder{
 }
 .apply-btn-wrapper{
     width: 10vw;
-    height: 50vh;
+     height: 50vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+    gap: 2rem;
 }
 .apply-btn{
     background-color: #544bd2;
@@ -93,6 +95,14 @@ input::placeholder{
     border-radius: 4px;
     font-family: 'Inter', sans-serif;
     border: none;
+}
+.reset-btn{
+    background-color: #ffffff;
+    color: black;
+    padding: 8px 16px;
+    border-radius: 4px;
+    border: 1.5px solid black;
+    font-family: 'Inter', sans-serif;
 }
 .buttons{
     display: flex;

@@ -1,13 +1,11 @@
 let grandient = document.querySelector(".gradient-wrapper");
 let parent = document.querySelector(".color-picker-wrapper");
-let colorCount = 1;
-let colors = [];
-// let gradientValue = "linear-gradient(to right"
-
+let colorCount = 0;
 function elements(){
     //color
     let color = document.createElement("div");
     color.classList.add("colors");
+    color.setAttribute("id",`color${colorCount}`);
     //div
     let div = document.createElement("div");
     div.classList.add("colors");
@@ -31,44 +29,81 @@ function elements(){
     color.append(colorInp);
     color.append(textInp);
 
-    //selecting color event           // value of text and color needs to be changed in colors 
     colorInp.addEventListener("mouseout", ()=>{
         textInp.value = colorInp.value;  
     });
 
-    // gradientValue = gradientValue.concat(","+colorInp.value);       //issue
-
-    //push color in colors array
-    colors.push(color);
-
-    colorCount++;
     return color;
 }
 
+colorCount++;
 parent.append(elements());
+console.log(colorCount);
+colorCount++;
 parent.append(elements());
+console.log(colorCount);
 
 let addColorBtn = document.querySelector(".add-more-color-wrapper");
 addColorBtn.addEventListener("click",()=>{
+    colorCount++;
     parent.append(elements());
 });
 let rmvColorBtn = document.querySelector(".remove-color-wrapper");
-rmvColorBtn.addEventListener("click",()=>{
-    parent.pop();                       // not working
-});
+function removeColor(){
+    let colorR = document.getElementById(`color${colorCount}`);
+    console.log(colorR.id);
+    parent.removeChild(colorR);
+    colorCount--;
+}
+rmvColorBtn.addEventListener("click",()=> removeColor());
 
 let applyBtn = document.querySelector(".apply-btn");
+let resetBtn = document.querySelector(".reset-btn");
+
+// apply button onclick event
+applyBtn.addEventListener("click", ()=>{
+    let currentCount = 1;
+    let gradValue = "linear-gradient(to right";
+    while(currentCount<=colorCount){
+        let colorNum = document.getElementById(`${currentCount}`);
+        gradValue=gradValue.concat(`,${colorNum.value}`);
+        currentCount++;
+    }
+    gradValue = gradValue.concat(")");
+    console.log(gradValue);
+    grandient.style.background = gradValue; 
+})
+
+// reset button onclick event
+resetBtn.addEventListener("click", ()=>{
+    while(colorCount >2){
+        removeColor();
+    } 
+    while(colorCount>0){
+        console.log("while k andar");
+        let textId = document.getElementById(`textInp${colorCount}`);
+        let colorId = document.getElementById(`${colorCount}`);
+        textId.value = null;
+        colorId.value = null;
+        colorCount--;
+    }
+    colorCount = 2;
+})
+
+
+//apply button css
 applyBtn.addEventListener("mousedown", ()=>{
     applyBtn.style.padding = "6px 14px";
 })
 applyBtn.addEventListener("mouseup", ()=>{
     applyBtn.style.padding = "8px 16px";
 })
-// applyBtn.addEventListener("click", ()=>{
-//     grandient.style.background = gradientValue+")";
-//     console.log(gradientValue+")");
-// })
-
-
+//reset button css
+resetBtn.addEventListener("mousedown", ()=>{
+    resetBtn.style.padding = "6px 14px";
+})
+resetBtn.addEventListener("mouseup", ()=>{
+    resetBtn.style.padding = "8px 16px";
+})
 
 
