@@ -1,12 +1,4 @@
-function pushPageViewEvent(){
-    window.dataLayer = window.dataLayer || [];
-    window.dataLayer.push({
-        'event': 'page-view';
-        'page_path': window.location.pathname;
-    })
-}
 
-window.addEventListener('load', pushPageViewEvent);
 
 let grandient = document.querySelector(".gradient-wrapper");
 let parent = document.querySelector(".color-picker-wrapper");
