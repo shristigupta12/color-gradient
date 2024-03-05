@@ -1,5 +1,4 @@
 
-
 let grandient = document.querySelector(".gradient-wrapper");
 let parent = document.querySelector(".color-picker-wrapper");
 let colorCount = 0;
@@ -74,6 +73,9 @@ applyBtn.addEventListener("click", ()=>{
     gradValue = gradValue.concat(")");
     console.log(gradValue);
     grandient.style.background = gradValue; 
+
+    //gtag
+    gtag('event', 'applyBtnClicked');
 })
 
 // reset button onclick event
@@ -109,4 +111,4 @@ resetBtn.addEventListener("mouseup", ()=>{
     resetBtn.style.padding = "8px 16px";
 })
 
-
+// GTag
